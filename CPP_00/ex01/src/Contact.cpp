@@ -6,11 +6,10 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:25:15 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/13 17:09:49 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/13 22:10:47 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Contact.hpp"
 
 Contact::Contact ( void )

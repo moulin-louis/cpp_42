@@ -6,7 +6,7 @@
 #    By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/13 13:30:11 by loumouli          #+#    #+#              #
-#    Updated: 2023/01/13 15:28:30 by loumouli         ###   ########.fr        #
+#    Updated: 2023/01/13 20:59:18 by loumouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,9 +43,9 @@ NAME		= phonebook
 # ################################## #
 C_DIR		= src
 C_FILES		=	main.cpp		\
-				PhoneBook.cpp	\
 				Contact.cpp		\
-
+				PhoneBook.cpp	\
+				
 SRCS		= $(patsubst %, $(C_DIR)/%, $(C_FILES))
 
 # ################################## #
