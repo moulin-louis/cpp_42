@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:25:18 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/13 22:36:46 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/14 10:37:31 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,12 @@ void	PhoneBook::add_contact( PhoneBook *var )
 void	put_space(const std::string &str)
 {
 	if (str.length() < 10)
-		{
-			int x = 10 - str.length();
-			std::cout << "x = " << x << std::endl;
-			if (x <= 0)
-				return ;
-			while (x++ < 10)
-				std::cout << " ";
-		}
+	{
+		int x = 10 - str.length();
+		while (x--)
+			std::cout << " ";
+	}
+	return ;
 }
 
 void	PhoneBook::search_contact( PhoneBook *var )
@@ -82,13 +80,13 @@ void	PhoneBook::search_contact( PhoneBook *var )
 		std::cout << var->book[i].last_name.substr(0, 9);
 		if (var->book[i].last_name.length() >= 10)
 			std::cout << ".";
-		put_space(var->book[i].first_name);
+		put_space(var->book[i].last_name);
 		std::cout << "|";
 
 		std::cout << var->book[i].nickname.substr(0, 9);
 		if (var->book[i].nickname.length() >= 10)
 			std::cout << ".";
-		put_space(var->book[i].first_name);
+		put_space(var->book[i].nickname);
 		std::cout << std::endl;
 	}
 	std::string	u_input;
