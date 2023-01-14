@@ -6,7 +6,7 @@
 #    By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/13 13:30:11 by loumouli          #+#    #+#              #
-#    Updated: 2023/01/14 11:56:16 by loumouli         ###   ########.fr        #
+#    Updated: 2023/01/14 15:47:27 by loumouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,13 +20,13 @@ RM			= rm -rf
 # ################################## #
 #              EXEC NAME             #
 # ################################## #
-NAME		= phonebook
+NAME		=	test
 
 # ################################## #
 #               SOURCES              #
 # ################################## #
 C_DIR		= src
-C_FILES		=	test.cpp	\
+C_FILES		=	tests.cpp	\
 				Account.cpp	\
 				
 SRCS		= $(patsubst %, $(C_DIR)/%, $(C_FILES))
@@ -65,8 +65,6 @@ $(O_DIR)/%.o: $(C_DIR)/%.cpp
 
 $(NAME): $(O_DIR) $(OBJS)
 			$(CC) $(OBJS) $(CFLAGS) -o $@
-test:
-	echo test
 
 # ################################## #
 #                CLEAN               #
