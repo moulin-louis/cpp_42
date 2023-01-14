@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/13 14:42:45 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/14 11:16:29 by loumouli         ###   ########.fr       */
+/*   Created: 2023/01/14 11:57:17 by loumouli          #+#    #+#             */
+/*   Updated: 2023/01/14 12:03:11 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
-#include <cstdlib>
+#include "Account.hpp"
 
-class PhoneBook
+Account::Account ( int initial_deposit )
 {
-private:
-	int	nbr_of_contact;
-	Contact	book[8];
-public:
-	PhoneBook( void );
-	~PhoneBook();
-	void	add_contact( PhoneBook *var );
-	void	search_contact( PhoneBook *var);
-};
+	std::cout << "\e[1;92m" << "- Account constructor called" << "\e[0m" << std::endl;
+	return ;
+}
 
+Account::Acount( void )
+{
+	std::cout << "\e[1;92m" << "- Account constructor called" << "\e[0m" << std::endl;
+	return ;
+}
+
+Account::~Account ( void )
+{
+	std::cout << "\e[1;91m" << "- Account destructor called" << "\e[0m" << std::endl;
+	return ;
+}

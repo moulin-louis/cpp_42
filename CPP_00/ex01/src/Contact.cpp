@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:25:15 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/13 22:10:47 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/14 11:35:56 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,54 @@ Contact::~Contact ( void )
 {
 	std::cout << "\e[1;91m" << "- Contact destructor called" << "\e[0m" << std::endl;
 	return ;
+}
+
+
+std::string	Contact::return_first_name( void )
+{
+	return (this->first_name);
+}
+
+std::string	Contact::return_last_name( void )
+{
+	return (this->last_name);
+}
+
+std::string	Contact::return_nickname( void )
+{
+	return (this->nickname);
+}
+
+std::string	Contact::return_phone_nbr( void )
+{
+	return (this->phone_nbr);
+}
+
+std::string	Contact::return_secret( void )
+{
+	return (this->secret);
+}
+void	Contact::set_contact( void )
+{
+		std::string	u_input;
+
+	std::cout << "- Type is first name" << std::endl;
+	std::cin >> u_input;
+	this->first_name = u_input;
+
+	std::cout << "- Type is last name" << std::endl;
+	std::cin >> u_input;
+	this->last_name = u_input;
+
+	std::cout << "- Type is nickname" << std::endl;
+	std::cin >> u_input;
+	this->nickname = u_input;
+
+	std::cout << "- Type is phone number" << std::endl;
+	std::cin >> u_input;
+	this->phone_nbr = u_input;
+	
+	std::cout << "- Type is darkest secret" << std::endl;
+	std::cin >> u_input;
+	this->secret = u_input;
 }

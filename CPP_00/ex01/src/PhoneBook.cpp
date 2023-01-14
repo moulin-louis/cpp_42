@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:25:18 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/14 10:37:31 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/14 11:41:46 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,27 +27,7 @@ PhoneBook::~PhoneBook ( void )
 
 void	PhoneBook::add_contact( PhoneBook *var )
 {
-	std::string	u_input;
-
-	std::cout << "- Type is first name" << std::endl;
-	std::cin >> u_input;
-	var->book[var->nbr_of_contact].first_name = u_input;
-
-	std::cout << "- Type is last name" << std::endl;
-	std::cin >> u_input;
-	var->book[var->nbr_of_contact].last_name = u_input;
-
-	std::cout << "- Type is nickname" << std::endl;
-	std::cin >> u_input;
-	var->book[var->nbr_of_contact].nickname = u_input;
-
-	std::cout << "- Type is phone number" << std::endl;
-	std::cin >> u_input;
-	var->book[var->nbr_of_contact].phone_nbr = u_input;
-	
-	std::cout << "- Type is darkest secret" << std::endl;
-	std::cin >> u_input;
-	var->book[var->nbr_of_contact].secret = u_input;
+	var->book[var->nbr_of_contact].set_contact();
 	var->nbr_of_contact++;
 	if (var->nbr_of_contact == 8)
 		var->nbr_of_contact = 0;
@@ -71,33 +51,40 @@ void	PhoneBook::search_contact( PhoneBook *var )
 	{
 		std::cout << i << "         " << "|";
 		
-		std::cout << var->book[i].first_name.substr(0, 9);
-		if (var->book[i].first_name.length() >= 10)
+		std::cout << var->book[i].return_first_name().substr(0, 9);
+		if (var->book[i].return_first_name().length() >= 10)
 			std::cout << ".";
-		put_space(var->book[i].first_name);
+		put_space(var->book[i].return_first_name());
 		std::cout << "|";
 
-		std::cout << var->book[i].last_name.substr(0, 9);
-		if (var->book[i].last_name.length() >= 10)
+		std::cout << var->book[i].return_last_name().substr(0, 9);
+		if (var->book[i].return_last_name().length() >= 10)
 			std::cout << ".";
-		put_space(var->book[i].last_name);
+		put_space(var->book[i].return_last_name());
 		std::cout << "|";
 
-		std::cout << var->book[i].nickname.substr(0, 9);
-		if (var->book[i].nickname.length() >= 10)
+		std::cout << var->book[i].return_nickname().substr(0, 9);
+		if (var->book[i].return_nickname().length() >= 10)
 			std::cout << ".";
-		put_space(var->book[i].nickname);
+		put_space(var->book[i].return_nickname());
 		std::cout << std::endl;
 	}
 	std::string	u_input;
+	if (var->nbr_of_contact == 0)
+		return ;
 	std::cout << "Which ID to you want to see ?" << std::endl;
 	std::cin >> u_input;
 	int	int_input = std::atoi(u_input.c_str());
-	std::cout << var->book[int_input].first_name << std::endl;
-	std::cout << var->book[int_input].last_name << std::endl;
-	std::cout << var->book[int_input].nickname << std::endl;
-	std::cout << var->book[int_input].phone_nbr << std::endl;
-	std::cout << var->book[int_input].secret << std::endl;
+	if (int_input < 0 || int_input > var->nbr_of_contact)
+	{
+		std::cout << "Wrong index" << std::endl;
+		return ;
+	}
+	std::cout << var->book[int_input].return_first_name() << std::endl;
+	std::cout << var->book[int_input].return_last_name() << std::endl;
+	std::cout << var->book[int_input].return_nickname() << std::endl;
+	std::cout << var->book[int_input].return_phone_nbr() << std::endl;
+	std::cout << var->book[int_input].return_secret() << std::endl;
 	
 	
 }
