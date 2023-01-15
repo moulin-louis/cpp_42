@@ -6,25 +6,27 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 16:52:36 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/15 19:00:19 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/15 21:24:51 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 
-void	trigger_insert(std::string* buffer, int pos, std::string s1, std::string s2)
+void	trigger_insert(std::string* buffer, int pos, const std::string& s1, const std::string& s2)
 {
 	std::string og = s1;
 	std::string pld = s2;
 	if (pos + pld.length() > buffer->length())
 	{
-		buffer->erase(pos, pos + og.length() - 1);
+		buffer->erase(buffer->begin() + pos , buffer->begin() + (pos + og.length()));
 		buffer->insert(pos, pld);
 		buffer->append("\n");
 		return ;
 	}
-	buffer->erase(pos, pos + og.length() - 1);
+	buffer->erase(buffer->begin() + pos , buffer->begin() + (pos + og.length()));
+	std::string temp = *buffer;
+	(void)temp;
 	buffer->insert(pos, pld);
 }
 
@@ -51,10 +53,7 @@ int	main( int ac, char ** av )
 	{
 		size_t pos = buffer.find(av[2], 0);
 		if (pos != std::string::npos)
-		{
-			std::string payload = av[3];
 			trigger_insert(&buffer, pos, av[2], av[3]);
-		}
 		else
 			break ;
 	}
