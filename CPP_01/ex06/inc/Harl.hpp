@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 19:26:47 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/15 12:04:14 by loumouli         ###   ########.fr       */
+/*   Created: 2023/01/15 17:06:50 by loumouli          #+#    #+#             */
+/*   Updated: 2023/01/15 18:09:23 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-void	randomChump( std::string name )
+class Harl
 {
-	Zombie temp(name);
-	temp.announce();
-}
+typedef	struct	s_ptr_arr
+{
+	std::string	name;
+	void(Harl::*ptr)(void);
+}				ptr_arr;
+private:
+	void debug( void );
+	void info( void );
+	void warning( void );
+	void error( void );
+	void init( void );
+	ptr_arr	array[4];
+public:
+	void complain( std::string level );
+	Harl(/* args */);
+	~Harl();
+	void	muting_debug(std::string level, Harl& var);
+};

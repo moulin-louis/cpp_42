@@ -5,18 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 19:26:56 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/15 12:02:52 by loumouli         ###   ########.fr       */
+/*   Created: 2023/01/15 17:22:30 by loumouli          #+#    #+#             */
+/*   Updated: 2023/01/15 17:54:36 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-int	main(void)
+int	main( void )
 {
-	Zombie *test = newZombie("heap_zombie");
-	test->announce();
-	delete test;
-	randomChump("stack_zombie");
+	Harl	temp;
+
+	std::cout << "Displaying debug message..." << std::endl;
+	temp.complain("DEBUG");
+	std::cout << std::endl;
+	std::cout << "Displaying info message..." << std::endl;
+	temp.complain("INFO");
+	std::cout << std::endl;
+	std::cout << "Displaying warning message..." << std::endl;
+	temp.complain("WARNING");
+	std::cout << std::endl;
+	std::cout << "Displaying error message..." << std::endl;
+	temp.complain("ERROR");
 	return (0);
 }

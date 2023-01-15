@@ -6,7 +6,7 @@
 #    By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/13 13:30:11 by loumouli          #+#    #+#              #
-#    Updated: 2023/01/15 12:23:30 by loumouli         ###   ########.fr        #
+#    Updated: 2023/01/15 16:59:07 by loumouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,16 +20,13 @@ RM			= rm -rf
 # ################################## #
 #              EXEC NAME             #
 # ################################## #
-NAME		= brainz		
+NAME		= sed_for_looser		
 
 # ################################## #
 #               SOURCES              #
 # ################################## #
 C_DIR		= src
 C_FILES		=	main.cpp		\
-				Zombie.cpp		\
-				newZombie.cpp	\
-				randomChump.cpp	\
 				
 SRCS		= $(patsubst %, $(C_DIR)/%, $(C_FILES))
 

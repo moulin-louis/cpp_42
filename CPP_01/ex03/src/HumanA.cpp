@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 19:26:50 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/15 12:03:07 by loumouli         ###   ########.fr       */
+/*   Created: 2023/01/15 13:53:29 by loumouli          #+#    #+#             */
+/*   Updated: 2023/01/15 16:20:29 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
-
-Zombie::Zombie (std::string name)
+HumanA::HumanA( std::string name, Weapon& weapon )
 {
+	std::cout << "HumanA constructor called" << std::endl;
 	this->name = name;
+	this->weapon = &weapon; 
 	return ;
 }
 
-Zombie::~Zombie (void)
+HumanA::~HumanA( void )
 {
-	std::cout << this->name << " destroyed" << std::endl;
+	std::cout << "HumanA destructor called" << std::endl;
 	return ;
 }
 
-void	Zombie::announce( void )
+void	HumanA::attack( void )
 {
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
 	return ;
 }
