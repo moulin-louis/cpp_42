@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:45:56 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/17 16:40:10 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/19 13:18:07 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,14 @@ public:
 	void	attack(const std::string& target);
 	void	takeDamage(unsigned int amout);
 	void	beRepaired(unsigned int amount);
-	void	setDamage( int amount );
-	int		return_dmg( void ) ;
+	//fn to set private member
+	void	set_hitpoint( int amount );
+	void	set_energy( int amount );
+	void	set_damage( int amount );
+	void	set_name(std::string name);
+	//fn to return value of private member
+	std::string&	return_name( void );
+	int		return_dmg( void );
+	int		return_energy( void );
+	int		return_hit( void );
 };

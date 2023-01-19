@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:00:04 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/17 12:24:31 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/19 18:04:34 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 public:
 	Fixed( void );
 	Fixed( const int i);
-	Fixed( const double i);
+	Fixed( const float i);
 	Fixed ( const Fixed&);
 	~Fixed();
 	int		getRawBits( void );

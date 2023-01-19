@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:00:06 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/17 13:36:14 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/19 18:18:06 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@
 	}
 	//Constructor with an float
 	Fixed::Fixed( const double i) {
-		//std::cout << "Float Fixed constructor called" << std::endl;
-		this->value = i * (1 << 8);
-		return ;
+	std::cout << "Float Fixed constructor called" << std::endl;
+	this->value = round(i * (1 << 8));
+	return ;
 	}
 	//Constructor with a Fixed instance as arg
 	Fixed::Fixed ( const Fixed& var) {

@@ -6,11 +6,12 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:00:06 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/17 12:33:14 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/19 18:14:14 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <cmath>
 
 //CONSTRUCTOR AND DESTRUCTOR
 //Default constructor
@@ -27,9 +28,9 @@ Fixed::Fixed( const int i ) {
 	return ;
 }
 //Constructor with an float
-Fixed::Fixed( const double i) {
+Fixed::Fixed( const float i) {
 	std::cout << "Float Fixed constructor called" << std::endl;
-	this->value = i * (1 << 8);
+	this->value = roundf(i * (1 << 8));
 	return ;
 }
 //Constructor with a Fixed instance as arg
@@ -68,7 +69,7 @@ void	Fixed::setRawBits ( int const raw ) {
 }
 //Return the value as a float
 float	Fixed::toFloat( void ) const {
-	return ((float)this->value / (1 << 8));
+	return ((float)this->value / 256.0f);
 }
 //Return the value as an int
 int	Fixed::toInt( void ) const {
