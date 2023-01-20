@@ -5,20 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 13:23:19 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/19 13:40:33 by loumouli         ###   ########.fr       */
+/*   Created: 2023/01/20 18:34:49 by loumouli          #+#    #+#             */
+/*   Updated: 2023/01/20 18:48:30 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include "ClapTrap.hpp"
 
-#ifndef FRAGTRAP_H
-#define FRAGTRAP_H
-class FragTrap : public ClapTrap
+class	FragTrap: public ClapTrap
 {
 public:
-	FragTrap(const std::string& name);
+	FragTrap( void );
+	FragTrap( const std::string& input );
+	FragTrap( const FragTrap& );
 	~FragTrap( void );
-	void	highFiveGuys( void );
+	FragTrap& operator=(const FragTrap& );
+	void	highFivesGuys( void );
 };
-#endif

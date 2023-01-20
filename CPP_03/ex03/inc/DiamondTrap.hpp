@@ -5,28 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 13:46:57 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/19 17:13:53 by loumouli         ###   ########.fr       */
+/*   Created: 2023/01/20 18:52:21 by loumouli          #+#    #+#             */
+/*   Updated: 2023/01/20 19:27:52 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-#ifndef DIAMONDTRAP_H
-#define DIAMONTRAP_h
-class	DiamondTrap : virtual public ScavTrap, virtual public FragTrap
+class	DiamondTrap: virtual public FragTrap, virtual public ScavTrap
 {
-protected:
-		std::string	name;
-	int		hit_point;
-	int		energy_point;
-	int		attack_dmg;
+private:
+	std::string name;
 public:
 	DiamondTrap( void );
-	DiamondTrap(const std::string& input);
+	DiamondTrap( const std::string& input );
+	DiamondTrap( const DiamondTrap& );
 	~DiamondTrap( void );
 	void	whoAmI( void );
+	int		get_dmg( void );
+	int		get_energy( void );
+	int		get_hit( void );
+	DiamondTrap& operator=(const DiamondTrap& );
 	using ScavTrap::attack;
 };
-#endif

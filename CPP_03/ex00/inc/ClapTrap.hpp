@@ -6,10 +6,11 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:45:56 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/17 16:22:20 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/20 14:40:28 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
 
 class	ClapTrap
@@ -20,11 +21,14 @@ private:
 	int		energy_point;
 	int		attack_dmg;
 public:
+	ClapTrap( void );
+	ClapTrap( const ClapTrap& );
 	ClapTrap( std::string name );
 	~ClapTrap( void );
 	void	attack(const std::string& target);
 	void	takeDamage(unsigned int amout);
 	void	beRepaired(unsigned int amount);
 	void	setDamage( int amount );
-	int		return_dmg( void ) ;
+	int		get_dmg( void ) ;
+	ClapTrap& operator=(const ClapTrap&);
 };

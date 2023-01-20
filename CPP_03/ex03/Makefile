@@ -6,7 +6,7 @@
 #    By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/13 13:30:11 by loumouli          #+#    #+#              #
-#    Updated: 2023/01/19 16:44:31 by loumouli         ###   ########.fr        #
+#    Updated: 2023/01/20 19:43:38 by loumouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM			= rm -rf
 # ################################## #
 #              EXEC NAME             #
 # ################################## #
-NAME		= diamondtrap		
+NAME		= DiamondTrap		
 
 # ################################## #
 #               SOURCES              #
@@ -46,7 +46,7 @@ DEPS		= $ $(C_FILES:.c=.d)
 #                FLAGS               #
 # ################################## #
 
-CFLAGS		= -Wall -Wextra -Werror -g -MMD -std=c++98 
+CFLAGS		= -Wall -Wextra -Werror -g -MMD -std=c++98 -Wshadow -Wno-shadow
 
 # ################################## #
 #                INCLUDES            #

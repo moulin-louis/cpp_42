@@ -6,7 +6,7 @@
 #    By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/13 13:30:11 by loumouli          #+#    #+#              #
-#    Updated: 2023/01/17 16:31:10 by loumouli         ###   ########.fr        #
+#    Updated: 2023/01/20 15:29:10 by loumouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM			= rm -rf
 # ################################## #
 #              EXEC NAME             #
 # ################################## #
-NAME		= scavtrap		
+NAME		= ScavTrap		
 
 # ################################## #
 #               SOURCES              #
@@ -28,7 +28,7 @@ NAME		= scavtrap
 C_DIR		= src
 C_FILES		=	main.cpp		\
 				ClapTrap.cpp	\
-				ScavTrap.cpp	
+				ScavTrap.cpp	\
 				
 SRCS		= $(patsubst %, $(C_DIR)/%, $(C_FILES))
 

@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:52:28 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/19 18:30:53 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:27:56 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,23 @@ ClapTrap::ClapTrap( void )
 	return ;
 }
 
-ClapTrap::ClapTrap( std::string name_given )
+ClapTrap::ClapTrap( std::string name )
 {
-	std::cout << "Name ClapTrap constructor called" << std::endl;
-	this->name = name_given;
+	std::cout << "ClapTrap string constructor called" << std::endl;
+	this->name = name;
 	this->hit_point = 10;
 	this->energy_point = 10;
 	this->attack_dmg = 0;
+	return ;
+}
+
+ClapTrap::ClapTrap( const ClapTrap& var )
+{
+	std::cout << "ClapTrap constructor by copy called" << std::endl;
+	this->name = var.name;
+	this->hit_point = var.hit_point;
+	this->energy_point = var.energy_point;
+	this->attack_dmg = var.attack_dmg;
 	return ;
 }
 
@@ -34,19 +44,8 @@ ClapTrap::~ClapTrap( void )
 	return ;
 }
 
-//fn to return private members
-std::string& ClapTrap::return_name( void ) { return (this->name); }
-int	ClapTrap::return_dmg( void ) { return (this->attack_dmg); }
-int	ClapTrap::return_energy( void ) { return (this->energy_point); }
-int	ClapTrap::return_hit( void ) { return (this->hit_point); }
+int	ClapTrap::get_dmg( void ) { return (this->attack_dmg); }
 
-//fn to set private members
-void	ClapTrap::set_damage( int amount ) { this->attack_dmg = amount; return ; }
-void	ClapTrap::set_name( std::string str ) { this->name = str; return ; }
-void	ClapTrap::set_energy( int amount ) { this->energy_point = amount; return ; }
-void	ClapTrap::set_hitpoint( int amount ) { this->hit_point = amount; return ; }
-
-//other fn
 void	ClapTrap::attack( const std::string& target)
 {
 	if (this->energy_point > 0)
@@ -56,8 +55,8 @@ void	ClapTrap::attack( const std::string& target)
 			std::cout << this->name << " cant attack cause he would deal 0 dammage" << std::endl;
 			return ;
 		}
-		std::cout << this->name << " attacks " << target << ", dealing ";
-		std::cout << this->return_dmg() << " damage!" << std::endl;
+		std::cout << "ClapTrap " << this->name << " attacks " << target << ", dealing ";
+		std::cout << this->attack_dmg << " damage!" << std::endl;
 		return ;
 	}
 	std::cout << this->name << " have 0 energy." << std::endl;
@@ -79,9 +78,25 @@ void	ClapTrap::beRepaired( unsigned int amount)
 {
 	if (this->energy_point > 0)
 	{
-		std::cout << this->name << "has been heal for " << amount << " HP!" << std::endl;
+		std::cout << "ClapTrap " << this->name << "has been heal for " << amount << " HP!" << std::endl;
 		this->energy_point += amount;
 	}
 	std::cout << this->name << " have 0 energy." << std::endl;
 	return ;
+}
+
+void	ClapTrap::setDamage( int amount )
+{
+	std::cout << this->name << " damage has been set to " << amount << std::endl;
+	this->attack_dmg = amount;
+}
+
+ClapTrap&	ClapTrap::operator=(const ClapTrap& var)
+{
+	std::cout << "ClapTrap constructor by assignation called" << std::endl;
+	this->name = var.name;
+	this->hit_point = var.hit_point;
+	this->energy_point = var.energy_point;
+	this->attack_dmg = var.attack_dmg;
+	return (*this);
 }

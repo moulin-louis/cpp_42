@@ -6,59 +6,33 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 16:15:33 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/19 18:29:12 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/20 19:42:09 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 
 int	main( void )
 {
-	{
-	ClapTrap	perso1("Perso1");
+	std::cout << "Creating DiamondTrap instance..." << std::endl;
+	DiamondTrap perso1("Perso1");
+	std::cout << std::endl;
+	std::cout << "Testing DiamondTrap attributs..." << std::endl;
 	ClapTrap	perso2("Perso2");
-
-	perso1.attack("Perso2");
-	perso2.takeDamage(perso1.return_dmg());
-	perso1.set_damage(2);
-	perso1.attack("Perso2");
-	perso2.takeDamage(perso1.return_dmg());
-	}
 	std::cout << std::endl;
-	std::cout << "New Test" << std::endl;
-	std::cout << std::endl;
-	{
-		ClapTrap	perso1("Perso1");
-		ScavTrap	perso2("Perso2");
-		perso1.attack("Perso2");
-		perso2.takeDamage(perso1.return_dmg());
-		perso1.set_damage(2);
-		perso1.attack("Perso2");
-		perso2.takeDamage(perso1.return_dmg());
-		perso2.attack("Perso2");
-		perso1.takeDamage(perso2.return_dmg());
-		perso2.guardGate();
-	}
-	std::cout << std::endl;
-	std::cout << "New Test" << std::endl;
-	std::cout << std::endl;
-	{
-		ScavTrap perso1("Perso1");
-		FragTrap perso2("Perso2");
-		perso2.highFiveGuys();
-		perso2.attack("Perso1");
-		perso1.takeDamage(perso2.return_dmg());
-		perso1.attack("Perso2");
-		perso2.takeDamage(perso1.return_dmg());
-	}
-	std::cout << std::endl;
-	std::cout << "New Test" << std::endl;
-	std::cout << std::endl;
-	{
-		DiamondTrap test("test");
-		test.whoAmI();
-		test.attack("truc");
-	}
+	perso1.attack("TEST");
+	perso2.takeDamage(perso1.get_dmg());
+	perso1.whoAmI();
+	std::cout << "DiamondTrap current stat" << std::endl;
+	std::cout << "Attack:" << perso1.get_dmg() << std::endl;
+	std::cout << "Energy:" << perso1.get_energy() << std::endl;
+	std::cout << "Hit:" << perso1.get_hit() << std::endl;
+	std::cout << "DiamondTrap stat should be :" << std::endl;
+	std::cout << "Attack:30" << std::endl;
+	std::cout << "Energy:50" << std::endl;
+	std::cout << "Hit:100" << std::endl;
+	std::cout << std::endl << "Calling destructor..." << std::endl;
 }
