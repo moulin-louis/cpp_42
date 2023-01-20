@@ -6,10 +6,11 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 17:06:50 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/19 17:56:02 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/20 12:59:14 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
 
 class Harl
@@ -27,7 +28,7 @@ private:
 	void init( void );
 	ptr_arr	array[4];
 public:
+	Harl( void );
+	~Harl( void );
 	void complain( std::string level );
-	Harl(/* args */);
-	~Harl();
 };

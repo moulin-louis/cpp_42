@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 17:09:29 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/19 17:58:26 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/20 12:58:50 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,21 +72,3 @@ void	Harl::complain( std::string level )
 		}
 	}
 }
-
-void	Harl::muting_debug(std::string level, Harl& var)
-{
-	int	i = 0;
-	while (i < 4)
-	{
-		if (level == var.array[i].name)
-			break ;
-		i++;
-	}
-	i--;
-	while (i >= 0)
-	{
-		var.array[i].name = "PLACEHOLDER";
-		i--;
-	}
-}
-

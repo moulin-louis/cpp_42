@@ -6,15 +6,13 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 13:33:10 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/15 16:23:14 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/20 12:44:49 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
-#ifndef WEAPON_HPP
-#define WEAPON_HPP
 #include "Weapon.hpp"
-#endif
 
 class HumanA
 {

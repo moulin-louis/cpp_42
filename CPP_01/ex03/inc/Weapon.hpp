@@ -6,10 +6,11 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 13:28:20 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/15 16:15:16 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/20 12:44:32 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
 
 class Weapon
