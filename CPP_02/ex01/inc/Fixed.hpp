@@ -6,10 +6,11 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:00:04 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/19 18:04:34 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:41:59 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
 #include <cmath>
 

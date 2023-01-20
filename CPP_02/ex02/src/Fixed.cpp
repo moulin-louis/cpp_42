@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:00:06 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/19 18:18:06 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:44:58 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@
 	//Constrcutor with an int
 	Fixed::Fixed( const int i ) {
 		//std::cout << "Int Fixed constructor called" << std::endl;
-		this->value = i * (1 << 8);
+		this->value = i * (1 << this->nbr_fract_bits);
 		return ;
 	}
 	//Constructor with an float
 	Fixed::Fixed( const double i) {
 	std::cout << "Float Fixed constructor called" << std::endl;
-	this->value = round(i * (1 << 8));
+	this->value = roundf(i * (1 << this->nbr_fract_bits));
 	return ;
 	}
 	//Constructor with a Fixed instance as arg
@@ -104,7 +104,7 @@
 	Fixed&	Fixed::operator*(const Fixed& var) {
 		double	temp1 = this->toFloat();
 		double	temp2 = var.toFloat();
-		this->value = (temp1 * temp2 * (1 << 8));
+		this->value = (temp1 * temp2 * (1 << this->nbr_fract_bits));
 		return (*this);
 	}
 	//Overload of / operator
@@ -147,11 +147,11 @@
 	}
 	//Return the value as a float
 	float	Fixed::toFloat( void ) const {
-		return ((float)this->value / (1 << 8));
+		return ((float)this->value / (1 << this->nbr_fract_bits));
 	}
 	//Return the value as an int
 	int	Fixed::toInt( void ) const {
-		return (this->value >> 8);
+		return (this->value >> this->nbr_fract_bits);
 	}
 	//Return the min one
 	Fixed&	Fixed::min(Fixed& var1, Fixed& var2) {

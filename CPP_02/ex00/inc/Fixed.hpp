@@ -6,10 +6,11 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:00:04 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/16 17:35:35 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:41:19 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
 
 class Fixed
