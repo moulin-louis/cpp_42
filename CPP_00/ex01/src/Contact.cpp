@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:25:15 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/14 11:35:56 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/20 11:50:02 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,33 +25,19 @@ Contact::~Contact ( void )
 }
 
 
-std::string	Contact::return_first_name( void )
-{
-	return (this->first_name);
-}
+std::string	Contact::get_first_name( void ) { return (this->first_name); }
 
-std::string	Contact::return_last_name( void )
-{
-	return (this->last_name);
-}
+std::string	Contact::get_last_name( void ) { return (this->last_name); }
 
-std::string	Contact::return_nickname( void )
-{
-	return (this->nickname);
-}
+std::string	Contact::get_nickname( void ) { return (this->nickname); }
 
-std::string	Contact::return_phone_nbr( void )
-{
-	return (this->phone_nbr);
-}
+std::string	Contact::get_phone_nbr( void ) { return (this->phone_nbr); }
 
-std::string	Contact::return_secret( void )
-{
-	return (this->secret);
-}
+std::string	Contact::get_secret( void ) { return (this->secret); }
+
 void	Contact::set_contact( void )
 {
-		std::string	u_input;
+	std::string	u_input;
 
 	std::cout << "- Type is first name" << std::endl;
 	std::cin >> u_input;

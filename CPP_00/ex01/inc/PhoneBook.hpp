@@ -6,15 +6,14 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:42:45 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/19 17:31:13 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/20 12:23:35 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include "Contact.hpp"
 #include <cstdlib>
-
-#ifndef PHONEBOOK_h
-#define PHONEBOOK_H
+#include <limits>
 
 class PhoneBook
 {
@@ -27,4 +26,3 @@ public:
 	void	add_contact( PhoneBook *var );
 	void	search_contact( PhoneBook *var);
 };
-#endif
