@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 18:56:18 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/20 19:39:40 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/20 19:49:22 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ DiamondTrap::DiamondTrap( const std::string& input )
 	this->name = input;
 	this->hit_point = FragTrap::hit_point;
 	this->energy_point = ScavTrap::energy_point;
-	this->attack_dmg = FragTrap::attack_dmg;
-	if (this->attack_dmg != 30)
-		this->attack_dmg = 30;
+	this->attack_dmg = 30;
 	return ;
 }
 
