@@ -6,7 +6,7 @@
 #    By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/13 13:30:11 by loumouli          #+#    #+#              #
-#    Updated: 2023/01/23 13:27:53 by loumouli         ###   ########.fr        #
+#    Updated: 2023/01/23 13:59:53 by loumouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM			= rm -rf
 # ################################## #
 #              EXEC NAME             #
 # ################################## #
-NAME		= Animal		
+NAME		= Animal_with_brain	
 
 # ################################## #
 #               SOURCES              #
@@ -30,8 +30,7 @@ C_FILES		=	main.cpp		\
 				Animal.cpp		\
 				Dog.cpp			\
 				Cat.cpp			\
-				WrongAnimal.cpp	\
-				WrongCat.cpp	\
+				Brain.cpp		\
 				
 SRCS		= $(patsubst %, $(C_DIR)/%, $(C_FILES))
 

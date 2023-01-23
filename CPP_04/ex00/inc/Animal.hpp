@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 11:38:27 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/22 16:59:34 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/23 13:20:16 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ protected:
 public:
 	Animal( void );
 	Animal( const Animal& );
-	~Animal( void );
+	virtual ~Animal( void );
 	virtual void makeSound( void ) const;
 	std::string getType( void )  const;
 	Animal& operator=(const Animal& );
