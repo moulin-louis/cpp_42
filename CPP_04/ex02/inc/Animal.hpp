@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/22 11:53:00 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/23 15:31:54 by loumouli         ###   ########.fr       */
+/*   Created: 2023/01/22 11:38:27 by loumouli          #+#    #+#             */
+/*   Updated: 2023/01/23 15:31:51 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef DOG_H
-#define DOG_H
-
-#include "Animal.hpp"
+#ifndef ANIMAL_H
+#define ANIMAL_H
+#include <iostream>
 #include "Brain.hpp"
-class Dog : public Animal
+class	Animal
 {
-private:
-	Brain*	my_brain;
+protected:
+	std::string type;
 public:
-	Dog( void );
-	//Dog( const Dog& );
-	~Dog( void );
-	void	makeSound( void ) const ;
-	std::string& getType( void );
-	virtual	Brain*	get_brain( void ) const;
-	virtual Dog&	operator=(const Dog& var);
+	Animal( void );
+	Animal( const Animal& );
+	virtual ~Animal( void );
+	virtual void makeSound( void ) const;
+	std::string getType( void )  const;
+	virtual Brain* get_brain( void ) const = 0;
+	virtual Animal& operator=(const Animal& );
 };
 #endif

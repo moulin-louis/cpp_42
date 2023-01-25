@@ -17,6 +17,7 @@
 
 int main()
 {
+	//Animal	temp;
 	const Animal* ptr[NBR_ANIMALS];
 	for (int i = 0; i < NBR_ANIMALS; i++)
 	{
