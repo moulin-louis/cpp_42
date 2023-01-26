@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 18:15:28 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/26 12:48:49 by loumouli         ###   ########.fr       */
+/*   Created: 2023/01/26 12:51:46 by loumouli          #+#    #+#             */
+/*   Updated: 2023/01/26 13:32:41 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#ifndef BUREAU_H
-#define BUREAU_H
+#ifndef FORM_H
+# define FORM_H
 
-#include <iostream>
-class Bureaucrat
+# include <iostream>
+# include "Bureaucrat.hpp"
+class Bureaucrat;
+
+class	Form
 {
 private:
 	const	std::string name;
-	int		grade;
+	bool	is_signed;
+	const	int	grade_req_sig;
+	const	int	grade_req_exe;
+	Form( void );
 public:
-	Bureaucrat( const std::string& name_input, const int grade_input );
-	Bureaucrat( const Bureaucrat& );
-	~Bureaucrat( void  );
-	std::string	getName( void );
-	int	getGrade( void );
-	void	incrementGrade( void );
-	void	decrementGrade( void );
-	Bureaucrat&	operator=(const Bureaucrat& );
+	Form(const int grad_sig_input, const int grad_exe_input, const std::string name_input);
+	Form( const Form& );
+	~Form( void );
+	int		get_grade_sig( void );
+	int		get_grade_exe( void );
+	bool	get_signed( void );
+	std::string	get_name( void );
+	void	beSigned( Bureaucrat& );
+	Form& operator=(const Form& );
 	//EXCEPTION CLASS
 
 	class	GradeTooHighException: public std::exception {
@@ -47,5 +53,5 @@ public:
 		~GradeTooLowException() throw() {};
 	};
 };
-std::ostream&	operator<<(std::ostream& os, Bureaucrat& var);
+std::ostream&	operator<<( std::ostream& os, Form& );
 #endif

@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:31:28 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/26 12:48:38 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/26 14:07:36 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,18 @@ void	Bureaucrat::decrementGrade( void )
 	return ;
 }
 
-const char* what( void ) { return("Grad to low"); 	}
+void	Bureaucrat::signForm( AForm& var )
+{
+	try {
+		var.beSigned(*this);
+	}
+	catch (AForm::GradeTooLowException& mce)
+	{
+		std::cout << this->name << " couldnt sign " << var << " because :" << std::endl << mce.what() << std::endl;
+		return ;
+	}
+	std::cout << this->name << " signed " << "Aform " <<  var.get_name() << std::endl;
+}
 
 Bureaucrat& Bureaucrat::operator=( const Bureaucrat& var )
 {
