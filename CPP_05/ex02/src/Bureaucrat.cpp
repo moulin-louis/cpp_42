@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:31:28 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/26 14:07:36 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/27 12:49:34 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,9 @@
 Bureaucrat::Bureaucrat( const std::string& name_input, const int grade_input ) : name(name_input)
 {
 	if (grade_input < 1)
-	{
 		throw GradeTooHighException();
-		return ;
-	}
 	if (grade_input > 150)
-	{
 		throw GradeTooLowException();
-		return ;
-	}
 	else
 	{
 		this->grade = grade_input;
@@ -45,8 +39,8 @@ Bureaucrat::~Bureaucrat( void )
 	return ;
 }
 
-int	Bureaucrat::getGrade( void ) { return(this->grade); }
-std::string	Bureaucrat::getName( void ) { return(this->name); }
+int	Bureaucrat::getGrade( void ) const { return(this->grade); }
+std::string	Bureaucrat::getName( void ) const { return(this->name); }
 
 void	Bureaucrat::incrementGrade( void )
 {
@@ -77,6 +71,20 @@ void	Bureaucrat::signForm( AForm& var )
 		return ;
 	}
 	std::cout << this->name << " signed " << "Aform " <<  var.get_name() << std::endl;
+}
+
+void	Bureaucrat::executeForm( AForm const & form )
+{
+	try {
+		form.execute(*this);
+	}
+	catch (AForm::GradeTooLowException& mce)
+	{
+		std::cout << "Cant execute form cause " << mce.what() << std::endl;
+		return ;
+	}
+	std::cout << this->getName() << " executed " << form.get_name() << std::endl;
+	return ;
 }
 
 Bureaucrat& Bureaucrat::operator=( const Bureaucrat& var )

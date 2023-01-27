@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:15:28 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/26 14:30:23 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/27 12:14:06 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ public:
 	Bureaucrat( const std::string& name_input, const int grade_input );
 	Bureaucrat( const Bureaucrat& );
 	~Bureaucrat( void  );
-	std::string	getName( void );
-	int	getGrade( void );
+	std::string	getName( void ) const ;
+	int	getGrade( void ) const ;
 	void	incrementGrade( void );
 	void	decrementGrade( void );
 	void	signForm( AForm& );
-	void	executeForm( AForm const & AForm);
+	void	executeForm( AForm const & form );
 	Bureaucrat&	operator=(const Bureaucrat& );
 
 	//EXCEPTION CLASS

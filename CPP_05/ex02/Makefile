@@ -6,7 +6,7 @@
 #    By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/13 13:30:11 by loumouli          #+#    #+#              #
-#    Updated: 2023/01/26 14:07:04 by loumouli         ###   ########.fr        #
+#    Updated: 2023/01/27 11:32:27 by loumouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,12 @@ NAME		= execute_order
 #               SOURCES              #
 # ################################## #
 C_DIR		= src
-C_FILES		=	main.cpp		\
-				Bureaucrat.cpp	\
-				AForm.cpp		\
+C_FILES		=	main.cpp					\
+				Bureaucrat.cpp				\
+				AForm.cpp					\
+				ShrubberyCreationForm.cpp	\
+				RobotomyRequestForm.cpp		\
+				PresidentialPardonForm.cpp	\
 
 				
 SRCS		= $(patsubst %, $(C_DIR)/%, $(C_FILES))

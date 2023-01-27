@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:05 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/26 14:10:49 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/27 12:17:43 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,16 @@ AForm::~AForm( void )
 	return ;
 }
 
-int	AForm::get_grade_sig( void ) { return(this->grade_req_sig); }
-int	AForm::get_grade_exe( void ) { return(this->grade_req_exe); }
-bool	AForm::get_signed( void ) { return(this->is_signed); }
-std::string	AForm::get_name( void ) { return(this->name); }
+int	AForm::get_grade_sig( void ) const { return(this->grade_req_sig); }
+int	AForm::get_grade_exe( void ) const { return(this->grade_req_exe); }
+bool	AForm::get_signed( void ) const { return(this->is_signed); }
+std::string	AForm::get_name( void ) const { return(this->name); }
+
+void	AForm::change_sig( void )
+{
+	this->is_signed = true;
+	return ;
+}
 
 AForm&	AForm::operator=( const AForm& var )
 {
