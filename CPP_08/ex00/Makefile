@@ -6,7 +6,7 @@
 #    By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/13 13:30:11 by loumouli          #+#    #+#              #
-#    Updated: 2023/01/27 18:04:19 by loumouli         ###   ########.fr        #
+#    Updated: 2023/01/28 10:42:19 by loumouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM			= rm -rf
 # ################################## #
 #              EXEC NAME             #
 # ################################## #
-NAME		= iter
+NAME		= easyfind
 
 # ################################## #
 #               SOURCES              #
@@ -64,6 +64,9 @@ $(O_DIR)/%.o: $(C_DIR)/%.cpp
 
 $(NAME): $(O_DIR) $(OBJS)
 			$(CC) $(OBJS) $(CFLAGS) -o $@
+
+objs_only: $(O_DIR) $(OBJS)
+	@echo "Object file compiled"
 
 # ################################## #
 #                CLEAN               #
