@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:31:28 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/27 12:49:34 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/29 15:14:57 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Bureaucrat::Bureaucrat( const std::string& name_input, const int grade_input ) :
 	else
 	{
 		this->grade = grade_input;
-		std::cout << "Bureaucrat default constructor called" << std::endl;
+		//std::cout << "Bureaucrat default constructor called" << std::endl;
 		return ;
 	}
 }
@@ -29,13 +29,13 @@ Bureaucrat::Bureaucrat( const std::string& name_input, const int grade_input ) :
 Bureaucrat::Bureaucrat( const Bureaucrat& var )
 {
 	this->grade = var.grade;
-	std::cout << "Bureaucrat constructor by copy called" << std::endl;
+	//std::cout << "Bureaucrat constructor by copy called" << std::endl;
 	return ;
 }
 
 Bureaucrat::~Bureaucrat( void )
 {
-	std::cout << "Bureaucrat default destructor called" << std::endl;
+	//std::cout << "Bureaucrat default destructor called" << std::endl;
 	return ;
 }
 

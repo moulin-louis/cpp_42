@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 14:09:44 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/27 12:53:07 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/29 15:15:14 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm( std::string target_input ) : AForm(145, 137, "ShrubberyCreationForm")
 {
-	std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
+	//std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
 	this->target = target_input;
 	return ;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm& var ) : AForm(var.get_grade_sig(), var.get_grade_exe(), var.get_name())
 {
-	std::cout << "ShrubberyCreationForm constructor by copy called" << std::endl;
+	//std::cout << "ShrubberyCreationForm constructor by copy called" << std::endl;
 	this->target = var.target;
 	return ;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm( void )
 {
-	std::cout << "Presidential default destructor called" << std::endl;
+	//std::cout << "Presidential default destructor called" << std::endl;
 	return ;
 }
 

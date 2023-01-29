@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 14:09:42 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/27 12:49:58 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/29 15:24:01 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 RobotomyRequestForm::RobotomyRequestForm( std::string target_input ) : AForm(72, 45, "RobotomyRequestForm")
 {
-	std::cout << "RobotomyRequestForm default constructor called" << std::endl;
+	//std::cout << "RobotomyRequestForm default constructor called" << std::endl;
 	this->target = target_input;
 	return ;
 }
 
 RobotomyRequestForm::RobotomyRequestForm( RobotomyRequestForm& var ) : AForm(var.get_grade_sig(), var.get_grade_exe(), var.get_name())
 {
-	std::cout << "RobotomyRequestForm constructor by copy called" << std::endl;
+	//std::cout << "RobotomyRequestForm constructor by copy called" << std::endl;
 	this->target = var.target;
 	return ;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm( void )
 {
-	std::cout << "Presidential default destructor called" << std::endl;
+	//std::cout << "Presidential default destructor called" << std::endl;
 	return ;
 }
 

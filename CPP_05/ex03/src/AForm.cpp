@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:05 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/27 12:17:43 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/29 15:15:30 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 AForm::AForm( void ) : name("PLACEHOLDER"), grade_req_sig(0), grade_req_exe(0)
 {
-	std::cout << "AForm default contructor called" << std::endl;
+	//std::cout << "AForm default contructor called" << std::endl;
 	return ;
 }
 
@@ -26,7 +26,7 @@ AForm::AForm(const int grade_sig_input, const int grade_exe_input, const std::st
 		throw GradeTooLowException();
 	else
 	{
-		std::cout << "AForm constructor with args called" << std::endl;
+		//std::cout << "AForm constructor with args called" << std::endl;
 		this->is_signed = false;
 		return ;
 	}
@@ -35,13 +35,13 @@ AForm::AForm(const int grade_sig_input, const int grade_exe_input, const std::st
 AForm::AForm( const AForm& var) : name(var.name), grade_req_sig(var.grade_req_sig), grade_req_exe(var.grade_req_exe)
 {
 	this->is_signed = false;
-	std::cout << "AForm constructor by copy called" << std::endl;
+	//std::cout << "AForm constructor by copy called" << std::endl;
 	return ;
 }
 
 AForm::~AForm( void )
 {
-	std::cout << "AForm default destructor called" << std::endl;
+	//std::cout << "AForm default destructor called" << std::endl;
 	return ;
 }
 
