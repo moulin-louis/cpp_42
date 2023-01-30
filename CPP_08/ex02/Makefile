@@ -6,7 +6,7 @@
 #    By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/13 13:30:11 by loumouli          #+#    #+#              #
-#    Updated: 2023/01/29 17:21:11 by loumouli         ###   ########.fr        #
+#    Updated: 2023/01/30 12:11:35 by loumouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,6 @@ NAME		= mut_stack
 # ################################## #
 C_DIR		= src
 C_FILES		=	main.cpp			\
-				MutantStack.cpp		\
 
 				
 SRCS		= $(patsubst %, $(C_DIR)/%, $(C_FILES))
