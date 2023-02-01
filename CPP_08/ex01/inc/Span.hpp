@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 10:57:55 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/28 12:12:27 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/02/01 13:11:55 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,9 @@
 
 #include <iostream>
 #include <vector>
-#include <stdexcept>
-#include<cstdlib>
 #include <algorithm>
 #include <numeric>
-#include <functional>
 #include <iterator>
-#include <algorithm>
-#include <iostream>
-#include <iterator>
-#include <string_view>
-#include <vector>
 
 
 class Span
@@ -40,9 +32,12 @@ public:
 	Span( const unsigned int& max_input );
 	Span( const Span& );
 	~Span( void );
-	Span&	operator=(const Span& );
-	void	addNumber( const int& input );
 	int		shortestSpan( void );
 	int		longestSpan( void );
+	void	addNumber( const int& input );
+	void	assign(const unsigned int& nbr_assign, const unsigned int& val);
+	void	assign( std::vector<int>::iterator& it_b, const std::vector<int>::iterator& it_e);
+	Span&	operator=(const Span& );
+	int&	operator[]( unsigned int range);
 };
 #endif
