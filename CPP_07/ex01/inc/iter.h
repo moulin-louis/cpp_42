@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 18:04:31 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/27 18:16:29 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/02/01 12:01:28 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 #define ITER_H
 
 #include <iostream>
-template<typename T, typename G, typename H>
-void	iter(T* ptr_arr, G len_arr, H ptr_fn)
+#include <exception>
+
+template <typename T>
+void	iter(T* arr, int arr_size, void (*fnct)(const T&))
 {
-	G temp = 0;
-	while(temp < len_arr)
-	{
-		ptr_fn(ptr_arr[temp]);
-		temp++;
-	}
+	if (!arr)
+		throw std::invalid_argument("array is null");
+	for (int i = 0; i < arr_size	; i ++)
+		fnct(arr[i]);
 }
 #endif

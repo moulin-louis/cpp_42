@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 15:57:55 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/29 16:54:52 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/02/01 12:12:54 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 #define MAX_VAL 8
 int main(int, char**)
 {
+    {
+        const Array<int> my_arr(MAX_VAL);
+        for (int i = 0; i < MAX_VAL; i ++)
+            std::cout << my_arr[i] << std::endl;
+    }
     Array<int> my_arr(MAX_VAL);
     int* off_arr = new int[MAX_VAL];
     srand(time(NULL));
@@ -30,7 +35,7 @@ int main(int, char**)
 	{
 		Array<int> tmp;
 		tmp = my_arr;
-	 Array<int> test(tmp);
+	    Array<int> test(tmp);
 	}
 
     for (int i = 0; i < MAX_VAL; i++)

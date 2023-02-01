@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 15:25:53 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/29 16:59:35 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/02/01 12:15:52 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,18 @@
 #include <iostream>
 #include <exception>
 template	<class T> class Array {
-public:
+private:
 	T*	ptr;
-	int	size_arr;
+	unsigned int	size_arr;
+public:
 	Array( void );
-	Array( int size );
+	Array( unsigned int size );
 	Array( Array&);
 	~Array( void );
 	int	size( void ) const;
 	Array<T>&	operator=( const Array<T>& );
-	T&	operator[]( int i );
+	T&	operator[]( unsigned int i );
+	T	operator[]( unsigned int i ) const;
 };
 
 template	<typename T>
@@ -39,12 +41,12 @@ Array<T>::Array( void )
 }
 
 template	<typename T>
-Array<T>::Array( int size )
+Array<T>::Array( unsigned int size )
 {
 	//std::cout << "Array default constructor called" << std::endl;
 	this->ptr = new T[size];
 	this->size_arr = size;
-	for (int i = 0; i < size; i++)
+	for (unsigned int i = 0; i < size; i++)
 		this->ptr[i] = 0;
 	return ;
 }
@@ -83,7 +85,17 @@ Array<T>&	Array<T>::operator=( const Array& var )
 }
 
 template	<typename T>
-T&	Array<T>::operator[]( int i )
+T&	Array<T>::operator[]( unsigned int i )
+{
+	if (i >= this->size_arr)
+		throw std::range_error("Out of range index: too big");
+	if (i < 0)
+		throw std::range_error("Out of range index: too low");
+	return (this->ptr[i]);
+}
+
+template	<typename T>
+T	Array<T>::operator[]( unsigned int i ) const
 {
 	if (i >= this->size_arr)
 		throw std::range_error("Out of range index: too big");
