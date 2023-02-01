@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 11:06:41 by loumouli          #+#    #+#             */
-/*   Updated: 2023/02/01 13:20:19 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/02/01 18:06:08 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,6 @@ int main()
 		std::vector<int>::iterator it_b = temp.begin();
 		span1.assign(it_b, temp.end());
 		for (unsigned int i = 0; i < 5; i++)
-		{
-			std::cout << "i = " << i << std::endl;
 			std::cout << span1[i] << std::endl;
-		}
 	}
 }

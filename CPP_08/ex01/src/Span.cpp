@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 11:07:02 by loumouli          #+#    #+#             */
-/*   Updated: 2023/02/01 13:19:22 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/02/01 18:05:53 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	Span::assign(std::vector<int>::iterator& it_b, const std::vector<int>::iter
 	{
 		if (it_b == it_e)	
 			break ;
-		this->stock[i] = *it_b;
+		this->stock.push_back(*it_b);
 		it_b++;
 	}
 }
@@ -109,8 +109,6 @@ Span&	Span::operator=(const Span& var)
 
 int&	Span::operator[]( const unsigned int range)
 {
-	if (range < 0)
-		throw std::range_error("out of bond range: too low");
 	if (range > this->stock.size())
 		throw std::range_error("out of bond range: too high");
 	return (this->stock[range]);
