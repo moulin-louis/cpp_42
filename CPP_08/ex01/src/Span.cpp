@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 11:07:02 by loumouli          #+#    #+#             */
-/*   Updated: 2023/02/01 18:05:53 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/01/28 13:15:35 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,14 @@ Span::~Span( void )
 	std::cout << "Span default destructor called" << std::endl;
 	return ;
 }
+
+void	Span::addNumber(const int& input)
+{
+	if (this->crt_nbr_val == this->max_val)
+		throw std::range_error("Cant add more numbers");
+	this->stock.push_back(input);
+	this->crt_nbr_val++;
+}	
 
 int	inverse_neg(int x ) {
 	if (x < 0)
@@ -75,41 +83,9 @@ int	Span::longestSpan( void )
 	return (temp[temp.size() - 1]);
 }
 
-void	Span::addNumber(const int& input)
-{
-	if (this->crt_nbr_val == this->max_val)
-		throw std::range_error("Cant add more numbers");
-	this->stock.push_back(input);
-	this->crt_nbr_val++;
-}	
-
-void	Span::assign( const unsigned int& nbr_assign, const unsigned int& val)
-{
-	for (unsigned int i = 0; i < nbr_assign; i++)
-		this->stock.push_back(val);
-}
-
-void	Span::assign(std::vector<int>::iterator& it_b, const std::vector<int>::iterator& it_e)
-{
-	for( unsigned int i = 0; 1; i++)
-	{
-		if (it_b == it_e)	
-			break ;
-		this->stock.push_back(*it_b);
-		it_b++;
-	}
-}
-
 Span&	Span::operator=(const Span& var)
 {
 	std::cout << "Span: cant do assignation caus of const attributes" << std::endl;
 	(void)var;
 	return (*this);
-}
-
-int&	Span::operator[]( const unsigned int range)
-{
-	if (range > this->stock.size())
-		throw std::range_error("out of bond range: too high");
-	return (this->stock[range]);
 }
