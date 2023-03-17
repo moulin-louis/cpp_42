@@ -6,7 +6,7 @@
 #    By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/13 13:30:11 by loumouli          #+#    #+#              #
-#    Updated: 2023/03/17 10:38:37 by loumouli         ###   ########.fr        #
+#    Updated: 2023/03/16 17:44:17 by loumouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,17 +20,18 @@ RM			= rm -rf
 # ################################## #
 #              EXEC NAME             #
 # ################################## #
-NAME		= abstract	
+NAME		= interface	
 
 # ################################## #
 #               SOURCES              #
 # ################################## #
 C_DIR		= src
-C_FILES		=	main.cpp		\
-				Animal.cpp		\
-				Dog.cpp			\
-				Cat.cpp			\
-				Brain.cpp		\
+C_FILES		=	AMateria.cpp		\
+				Ice.cpp				\
+				Cure.cpp			\
+				Character.cpp		\
+				main.cpp			\
+				MateriaSource.cpp	\
 				
 SRCS		= $(patsubst %, $(C_DIR)/%, $(C_FILES))
 
