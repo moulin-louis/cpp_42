@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 13:48:28 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/23 13:53:55 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/03/13 16:55:01 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Brain::~Brain( void )
 
 Brain& Brain::operator=(const Brain& var)
 {
-	std::cout << "Brain contructor by assignation called" << std::endl;
+	std::cout << "Brain assignation called" << std::endl;
 	for (int i = 0; i < 100; i++) {
 		this->ideas[i] = var.ideas[i];
 	}

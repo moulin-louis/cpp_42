@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 11:58:21 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/23 15:00:00 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/03/13 16:54:47 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,7 @@ Brain*	Cat::get_brain( void ) const { return (this->my_brain); }
 Cat&	Cat::operator=( const Cat& var )
 {
 	this->type = var.type;
-	for (int i = 0; i < 100; i++)
-	{
-		this->my_brain->ideas[i] = var.my_brain->ideas[i];
-	}
+	this->my_brain = var.my_brain;
 	std::cout << "Cat assignation called" << std::endl;
 	return (*this);
 }

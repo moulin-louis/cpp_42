@@ -6,7 +6,7 @@
 /*   By: loumouli <loumouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 13:43:46 by loumouli          #+#    #+#             */
-/*   Updated: 2023/01/23 15:18:02 by loumouli         ###   ########.fr       */
+/*   Updated: 2023/03/13 16:58:13 by loumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,7 @@ Dog& Dog::operator=( const Dog& var )
 {
 	std::cout << "Dog constructor by assignation called" << std::endl;
 	for (int i = 0; i < 100; i++)
-	{
 		this->my_brain->ideas[i] = var.my_brain->ideas[i];
-	}
 	this->type = var.type;
 	return (*this);
 }
