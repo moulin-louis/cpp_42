@@ -11,122 +11,51 @@
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
-#include <list>
 #include <stack>
+#include <list>
 
-int main()
-{
-
-	//Default stack test
-	// std::stack<int> mstack;
-	// mstack.push(5);
-	// mstack.push(17);
-	// std::cout << mstack.top() << std::endl;
-	// mstack.pop();
-	// std::cout << mstack.size() << std::endl;
-	// mstack.push(3);
-	// mstack.push(5);
-	// mstack.push(737);
-	// for (int i = 0; i < (int)mstack.size(); i ++)
-	// {
-	// 	std::cout << mstack.top() << std::endl;
-	// 	mstack.pop();
-	// }
-	// return 0;
-
-	//MutantStack test, check if its behave like the normal stack
-	// MutantStack<int> mstack;
-	// mstack.push(5);
-	// mstack.push(17);
-	// std::cout << mstack.top() << std::endl;
-	// mstack.pop();
-	// std::cout << mstack.size() << std::endl;
-	// mstack.push(3);
-	// mstack.push(5);
-	// mstack.push(737);
-	// for (int i = 0; i < (int)mstack.size(); i ++)
-	// {
-	// 	std::cout << mstack.top() << std::endl;
-	// 	mstack.pop();
-	// }
-	// return 0;
-
-	//Default Test from subject, will test iterator
-	MutantStack<int> mstack;
-	mstack.push(5);
-	mstack.push(17);
-	std::cout << "Printing top of the stack : should be 17" << std::endl;
-	std::cout << mstack.top() << std::endl;
-	std::cout << "Deleting the curent top of the stack" << std::endl;
-	mstack.pop();
-	std::cout << "Printing the size of the stack : should be 1" << std::endl;
-	std::cout << mstack.size() << std::endl;
-	mstack.push(3);
-	mstack.push(5);
-	mstack.push(737);
-	mstack.push(0);
-	std::cout << "Pushing 4 object to the stack" << std::endl;
-	std::cout << "creatint an it to the begin and one to the end of the stack" << std::endl;
-	MutantStack<int>::iterator it = mstack.begin();
-	MutantStack<int>::iterator ite = mstack.end();
-	std::cout << "incrementing and decrementing the beging it : should not move" << std::endl;
-	++it;
-	--it;
-	std::cout << "printing where the begint it point till the end it : should be 5 3 5 737 0" << std::endl;
-	while (it != ite)
-	{
-		std::cout << *it << std::endl;
-		++it;
-	}
-	std::cout << "printing a 2n time : should be 5 3 5 737 0" << std::endl;
-	it = mstack.begin();
-	while (it != ite)
-	{
-		std::cout << *it << std::endl;
-		++it;
-	}
-
-	MutantStack<int> stack_1;
-	MutantStack<int> stack_2;
-	stack_1.push(4);
-	stack_1.push(3);
-	stack_1.push(2);
-	stack_1.push(1);
-	stack_2 = stack_1;
-	std::cout << "Priting stack1 : should be 1 2 3 4" << std::endl;
-	for (; (int)stack_1.size();)
-	{
-		std::cout << stack_1.top() << std::endl;
-		stack_1.pop();
-	}
-	std::cout << "Priting stack2 : should be 1 2 3 4" << std::endl;
-	for (; (int)stack_2.size();)
-	{
-		std::cout << stack_2.top() << std::endl;
-		stack_2.pop();
-	}
-	return 0;
-
-
-	// std::list<int> mstack;
-	// mstack.push_back(5);
-	// mstack.push_back(17);
-	// std::cout << *mstack.end() << std::endl;
-	// mstack.pop_back();
-	// std::cout << mstack.size() << std::endl;
-	// mstack.push_back(3);
-	// mstack.push_back(5);
-	// mstack.push_back(737);
-	// //[...]
-	// mstack.push_back(0);
-	// std::list<int>::iterator it = mstack.begin();
-	// std::list<int>::iterator ite = mstack.end();
-	// ++it;
-	// --it;
-	// while (it != ite)
-	// {
-	// std::cout << *it << std::endl;
-	// ++it;
-	// }
-	// return 0;
+int main() {
+  MutantStack<int, std::vector<int> > mstack;
+  mstack.push(5);
+  mstack.push(17);
+  std::cout << mstack.top() << std::endl;
+  mstack.pop();
+  std::cout << mstack.size() << std::endl;
+  mstack.push(3);
+  mstack.push(5);
+  mstack.push(737);
+//[...]
+  mstack.push(0);
+  MutantStack<int, std::vector<int> >::iterator it = mstack.begin();
+  MutantStack<int, std::vector<int> >::iterator ite = mstack.end();
+  ++it;
+  --it;
+  while (it != ite)
+  {
+    std::cout << *it << std::endl;
+    ++it;
+  }
+  std::stack<int, std::vector<int> > s(mstack);
+  {
+    std::list<int> mlist;  // Remplacement de MutantStack par std::list
+    mlist.push_back(5);     // push devient push_back
+    mlist.push_back(17);
+    std::cout << mlist.back() << std::endl;  // top devient back
+    mlist.pop_back();                        // pop reste pop_back
+    std::cout << mlist.size() << std::endl;
+    mlist.push_back(3);
+    //mlist.push_back(5);
+    mlist.push_back(737);
+    mlist.push_back(0);
+    std::list<int>::iterator itl = mlist.begin();
+    std::list<int>::iterator itel = mlist.end();
+    std::cout << *itel << std::endl;
+    ++itl;
+    --itl;
+    while (itl != itel) {
+      std::cout << *itl << std::endl;
+      ++itl;
+    }
+  }
+  return 0;
 }
